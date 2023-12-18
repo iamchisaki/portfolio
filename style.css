@@ -1,0 +1,758 @@
+@charset "UTF-8";
+/* ----------------------------------
+    reset
+----------------------------------- */
+*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+  all: unset;
+  display: revert;
+}
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0px;
+  padding: 0px;
+  font-weight: normal;
+}
+body {
+  color: #000000;
+  background-color: #ffffff;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ",
+    sans-serif;
+  line-height: 1.3;
+  font-size: 16px;
+}
+ol,
+ul {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+table {
+  border-collapse: collapse;
+}
+a {
+  cursor: pointer;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="esubmit"],
+button,
+select,
+textarea {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  background: none;
+}
+
+/* ----------------------------------
+    基本レイアウト
+----------------------------------- */
+#wrapper {
+  overflow: hidden;
+}
+
+.main_width {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.narrow_width {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home_section {
+  padding-top: 140px;
+  padding-bottom: 140px;
+}
+
+.home_section.bg_gray{
+background: #f5f4f1;
+}
+
+.home_section.bg_white{
+  background: #fff;
+  }
+  
+/* ----------------------------------
+    共通パーツ
+----------------------------------- */
+.section_title h2 {
+  font-size: 40px;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  margin-bottom: 70px;
+}
+
+.link_btn{
+  margin-top: 70px;
+}
+
+.link_btn a,
+.link_btn button{
+  width: 100%;
+  max-width: 300px;
+ height: 80px;
+ background-color:#c9191a ;
+ font-size: 18px;
+ color: #fff;
+font-weight: bold;
+text-align: center;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: auto;
+transition: 0.5s;
+cursor: pointer;
+}
+
+.link_btn a:hover,
+.link_btn button:hover {
+background-color: #851111;
+transition: 0.5s;
+}
+
+.red{
+  color: #c9191a;
+}
+
+/* ----------------------------------
+    header
+----------------------------------- */
+header {
+  height: 76px;
+  width: 100%;
+  position: relative;
+}
+
+header #hd_logo {
+  padding: 10px 80px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+/*ハンバーガーメニュー*/
+
+header #hd_menu_btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: auto;
+  height: 100%;
+}
+
+header #hd_menu_btn img {
+  width: auto;
+  height: 100%;
+}
+
+/* ----------------------------------
+    first_view
+----------------------------------- */
+
+#first_view img {
+  width: 100%;
+}
+
+/* ----------------------------------
+    こんなお悩みありませんか
+----------------------------------- */
+
+.intro_flex{
+display: flex;
+margin-left: -15px;
+margin-right: -15px;
+}
+
+.intro_box{
+  width: 33.3333%;
+}
+
+.intro_box:nth-child(2){
+  transform: translateY(50px);
+}
+
+.intro_box .fukidashi{
+  background: white;
+  height: 100%;
+  margin-left: 15px;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  position: relative;
+}
+
+.intro_box .fukidashi p{
+  padding: 40px;
+  font-size: 22px;
+  line-height: 1.8em;
+  letter-spacing: 0.03em;
+}
+
+/*疑似要素*/
+
+.intro_box .fukidashi::before{
+  position: absolute;
+  content: "";
+  display: block;
+  background-image: url("../img/moyamoya.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 68px;
+  height: 78px;
+  top: -52px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.intro_box .fukidashi::after{
+  position: absolute;
+  content: "";
+  display: block;
+  background-image: url("../img/fukidashi.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 34px;
+  height: 26px;
+  bottom: -24px;
+  right: 32px;
+}
+
+/*　intro_cath */
+
+.intro_chath {
+  padding-top: 140px;
+  display: flex;
+  justify-content: center;
+}
+
+.intro_chath p{
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.05em;
+  position: relative;
+}
+
+
+
+.intro_chath p::before {
+position: absolute;
+display: block;
+content:"";
+width: 100%;
+height: 10px;
+background-image: url("../img/underline.png");
+left: 0;
+bottom: -10px;
+}
+
+.intro_chath p::after {
+  position: absolute;
+  display: block;
+  content: "";
+  background-image: url("../img/toki.png");
+  width: 168px;
+  height: 148px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  right: 0;
+  top: 50%;
+  transform: translate(110%,-50%);
+}
+
+/* ----------------------------------
+    ご提供できるサービス
+----------------------------------- */
+
+
+.service_flex{
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.service_flex .service_box{
+width: 33.3333%;
+padding: 0 15px;
+}
+
+.service_flex .service_box .service_box_inner.service_box_inner{
+  border: 3px solid#c9191a;
+  border-radius: 10px;
+  position: relative;
+}
+
+.service_flex .service_box .service_box_inner.service_box_inner p{
+  font-weight: bold;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.service_titile{
+  color: #c9191a;
+  font-size: 30px;
+  padding-top: 50px;
+}
+
+.service_price {
+  font-size: 22px;
+  margin-top: 26px;
+}
+
+.service_price >span {
+font-size: 16px;
+display: block;
+margin-top: 0.5em;
+}
+
+.service_image{
+  text-align: center;
+}
+
+/* ----------------------------------
+    point
+----------------------------------- */
+
+.point_wrap{
+  margin-bottom: 120px;
+}
+
+.point_block{
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 64px;
+
+}
+
+.point_block + .point_block {
+  margin-top: 20px;
+}
+
+.point_text{
+  padding-top: 50px;
+  padding-bottom: 40px;
+}
+
+.point_text h3 {
+font-size: 30px;
+color: #c9191a;
+font-weight: bold;
+}
+
+.point_text p {
+font-size: 18px;
+font-weight: bold;
+letter-spacing: 0.05em;
+line-height: 2;
+margin-top: 1em;
+}
+
+.point_number {
+min-width: 70px;
+margin-right: 48px;
+}
+
+/* ----------------------------------
+    list
+----------------------------------- */
+
+.advertisement_list ul {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+margin-left: -10px;
+margin-right: -10px;
+}
+
+.advertisement_list li{
+width: 25%;
+height: 90px;
+position: relative;
+padding: 0 10px;
+margin-bottom: 20px;
+}
+
+.advertisement_item{
+  color: #c9191a;
+  font-size: 18px;
+  font-weight: bolder;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.advertisement_img{
+  margin-top: 40px;
+  text-align: center;
+}
+
+/* ----------------------------------
+    service_detail
+----------------------------------- */
+
+
+.servise_name{
+  background-color: #f5f4f1;
+  width: 100%;
+  text-align: center;
+ 
+}
+
+.servise_name h3{
+  font-size: 24px;
+  font-weight: bold;
+  padding: 1em 0.5em;
+}
+
+.table_area{
+  margin-bottom: 60px;
+}
+
+.table_area table {
+border-top: 1px solid #e7e7e7;
+width: 100%;
+}
+
+.table_area table th, .table_area table td{
+padding: 1em;
+font-size: 16px;
+letter-spacing: 0.01em;
+line-height: 2;
+border-bottom: 1px solid #e7e7e7;
+vertical-align: middle;
+}
+
+.table_area table th{
+  text-align: center;
+  background-color: #fcfcfb;
+  font-weight: bold;
+}
+
+.table_area table td:first-child {
+font-weight: bold;
+width: 10em;
+}
+
+.table_area table td:nth-child(n + 3){
+text-align: center;  
+width: 10em;
+}
+
+.table_area table th + th,.table_area table td + td {
+  border-left: 1px solid #e7e7e7;
+}
+
+.price_wide{
+  width: 20em;
+}
+.service_supplement{
+  font-size: 14px;
+  color: #808080;
+}
+
+.service_supplement li+li{
+margin-top: 1.25em;
+}
+
+
+/* ----------------------------------
+   サービスの流れ
+----------------------------------- */
+
+.flow_list{
+margin-left: -20px;
+margin-right: -20px;
+}
+
+.flow_list ol{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+}
+
+.flow_list ol li{
+  width: 20%;
+  padding: 0 20px;
+  position: relative;
+}
+
+.flow_list ol li::before {
+  position: absolute;
+  content: "";
+  display: block;
+  background-image: url("../img/flow_arr.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 16px;
+  height: 30px;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%,-50%);
+}
+
+.flow_list ol li:first-child::before {
+  display: none;
+}
+
+.flow_content{
+ background-color: #ffffff; 
+ border-radius: 10px;
+ padding: 20px;
+ text-align: center;
+}
+
+.flow_content .flow_number{
+font-size: 38px;
+font-weight: bold;
+line-height: 1;
+}
+
+.flow_content .flow_title{
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.flow_content .flow_image{
+  width: 100;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin: 20px 0; 
+}
+
+
+/* ----------------------------------
+   message
+----------------------------------- */
+.bg_parallax{
+  background-image: url("../img/parallax_bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center bottom;
+  background-size: cover;
+}
+
+.massage_cont{
+  color: #fff;
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  margin: auto; 
+padding: 0 70px;
+}
+
+
+.bg_parallax .massage_cont .section_title h2{
+  writing-mode: vertical-rl;
+  text-align: left;
+  margin-right: 2em;
+}
+
+.bg_parallax .massage_cont .massage_text p{
+  font-size: 18px;
+  line-height: 2;
+}
+
+.bg_parallax .massage_cont .massage_text p,
+.bg_parallax .massage_cont .massage_text  li{
+  font-size: 18px;
+  line-height: 2;
+}
+
+.bg_parallax .massage_cont .massage_text p + p,
+.bg_parallax .massage_cont .massage_text  p + ul,
+.bg_parallax .massage_cont .massage_text  ul + p{
+  margin-top: 2em;
+}
+
+/* ----------------------------------
+   form_area
+----------------------------------- */
+
+.form_caution{
+  font-size: 14px;
+  text-align: center;
+  color: #808080;
+}
+
+.form_area form{
+  margin: 50px auto 0;
+}
+
+.form_area dl{
+  display: flex;
+  align-items: flex-start;
+  font-size: 16px;
+  width: 100%;
+  padding: 5px 0;
+}
+
+.form_area dl dt{
+font-weight: bold;
+min-width: 13em;
+margin-top: 1.2em;
+}
+
+.form_area dl dt span.requird{
+position: relative;
+} 
+
+.form_area dl dt span.requird::after{
+position: relative;
+content: "*";
+color: #c9191a;
+} 
+
+.form_area dl dd{
+  width: 100%;
+}
+
+.form_area input,
+.form_area select,
+.form_area textarea{
+  background-color: #fff;
+  border-radius: 5px;
+  width: 100%;
+  padding: 1.2em 2em;
+}
+
+.form_area textarea{
+  height: 10em;
+}
+
+.select_rap{
+position: relative;
+}
+
+.select_rap::before{
+  content: "";
+  display: block;
+  position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    border-top: 7px solid #555555;
+    border-bottom: 0;
+    right: 36px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+
+  /* ----------------------------------
+   prof
+----------------------------------- */
+
+.company_prof {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.company_prof dl{
+display: flex;
+font-size: 16px;
+border-top: 1px solid #e6e6e6;
+border-bottom: 1px solid #e6e6e6;
+padding: 2em 0;
+width: 100%;
+line-height: 2;
+}
+
+.company_prof dl dt{
+font-weight: bold;
+min-width: 8em;
+}
+
+.company_prof dl + dl{
+  border-top: none;
+}
+
+.company_prof dl dt,
+.company_prof dl dd{
+line-height: 2em;
+}
+
+.company_prof dl dd a{
+  color: #c9191a;
+  text-decoration: underline;
+}
+
+.company_prof dl dd a:hover{
+  text-decoration: none;
+}
+
+  /* ----------------------------------
+フッダー
+----------------------------------- */
+
+footer{
+background-color: #c9191a;
+padding-top: 140px;
+padding-bottom: 40px;
+}
+
+
+.content_navi ul{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.content_navi ul li{
+ width: 33.33%;
+ color: #ffffff;
+ margin-bottom: 60px;
+ padding: 0 16px;
+}
+
+.content_navi a span.en{
+font-size: 40px;
+letter-spacing: 0.15em;
+}
+
+.content_navi a span.jp{
+  font-size: 16px;
+}
+
+.content_navi ul li span{
+  display: block;
+}
